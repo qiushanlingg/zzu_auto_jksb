@@ -19,7 +19,7 @@ from urllib.parse import urlencode
 # from base64 import b64encode
 
 logging.basicConfig(level=logger_level, format='%(asctime)s - %(name)s - [%(levelname)s] - %(message)s')
-logger = logging.getLogger('jksb_tools')
+logger = logging.getLogger('jksb_utils')
 urllib3.disable_warnings()
 http = urllib3.PoolManager(cert_reqs='CERT_NONE', ssl_version=PROTOCOL_TLSv1_2)
 # requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions)
@@ -108,7 +108,7 @@ def send_message(message: str):
     elif send_type == 'email':
         # send_parameter应为json字符串，格式为：{"host": "smtp服务器地址", "user": "邮箱登录名", "password": "邮箱密码", "receiver": "接收邮件的邮箱"}
         try:
-            par = json.loads(send_parameter)
+            par = {"host": "smtp.qq.com", "user": "1436162481@qq.com", "password": "bjwhzbrljsoygigi", "receiver": "are10032@outlook.com"}
             mail_host = par['host']  # 设置服务器
             mail_user = par['user']  # 用户名
             mail_pass = par['password']  # 口令
