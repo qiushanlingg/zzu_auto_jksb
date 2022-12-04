@@ -108,7 +108,7 @@ def send_message(message: str):
     elif send_type == 'email':
         # send_parameter应为json字符串，格式为：{"host": "smtp服务器地址", "user": "邮箱登录名", "password": "邮箱密码", "receiver": "接收邮件的邮箱"}
         try:
-            par = {"host": "smtp.qq.com", "user": "1436162481@qq.com", "password": "bjwhzbrljsoygigi", "receiver": "are10032@outlook.com"}
+            par = json.loads(send_parameter)
             mail_host = par['host']  # 设置服务器
             mail_user = par['user']  # 用户名
             mail_pass = par['password']  # 口令
